@@ -1,1 +1,1 @@
-This is where all sessions is logged
+This is where all sessions is logged tests
