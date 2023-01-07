@@ -12,6 +12,8 @@ def crud_user():
                           tsv=False, xml=False, csv_with_hidden_cols=False,
                           tsv_with_hidden_cols=False)
     grid = SQLFORM.grid(db.auth_user,user_signature=False,editable=True,deletable=False,exportclasses=export_classes)
+    # sample edit
+    
     return dict(grid=grid)
 
 # USER GROUP TABLE
