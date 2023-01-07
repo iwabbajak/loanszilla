@@ -1,0 +1,210 @@
+{{extend 'layout.html'}}
+
+{{#block header}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap4.css')}}"/>
+<link rel="stylesheet" href="{{=URL('static','css/bootstrap.min.css')}}"/>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<style>
+    .h1jak{
+      color: #4179f8;
+      font-size: 24px;
+      font-weight: bolder;
+  }
+  .pjak{
+      width:100%;
+  }
+.approvejak{
+    position: absolute;
+    /* height: 50%; */
+    height: 175px;
+    top: 5px;
+    right: 5px;
+}
+.jakvbut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    width: 100%;
+    border-radius: 22px;
+    background: #4179f8;
+    height: 45px;
+    padding: 0 40px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    box-shadow: 0px 1px 8px 0px rgb(41 89 198 / 47%);
+    margin: 0 10px 0 0;
+    width: 105px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 15px;
+}
+.jakvbutrel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    width: 100%;
+    border-radius: 22px;
+    background: #f84141;
+    height: 45px;
+    padding: 0 40px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    box-shadow: 0px 1px 8px 0px rgb(41 89 198 / 47%);
+    margin: 0 10px 0 0;
+    width: 105px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 15px;
+}
+.jakvbutpay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    width: 100%;
+    border-radius: 22px;
+    background: #e6b52f;
+    height: 45px;
+    padding: 0 40px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    box-shadow: 0px 1px 8px 0px rgb(41 89 198 / 47%);
+    margin: 0 10px 0 0;
+    width: 105px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 15px;
+}
+  </style>
+  <link rel="stylesheet" href="{{=URL('static','css/hmc_my.css')}}"/>
+
+<uni-page-wrapper>
+    <uni-page-body>
+        <uni-view data-v-eb3fb7a8="">
+            <h1 data-v-eb3fb7a8="" class="h1jak"><img data-v-ae30d5d0="" mode="aspectFit" src="{{=URL('static','heromining/logo3.png')}}" style="height: 25px;">LOAN(S) LIST</h1>
+                <uni-view data-v-eb3fb7a8="" class="top">
+              </uni-view>
+            </uni-view>
+
+
+     <uni-view data-v-b47c2ffe="" class="container">
+              <uni-swiper data-v-b47c2ffe="" style="height: 5812px; min-height: 80vh;">
+                <div class="uni-swiper-wrapper">
+                  <div class="uni-swiper-slides">
+                    <div class="uni-swiper-slide-frame"
+                      style="width: 100%; height: 50%; transform: translate(0%, 0px) translateZ(0px);">
+                      <uni-swiper-item data-v-b47c2ffe="" data-index="new"
+                        style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+                        <uni-scroll-view data-v-b47c2ffe="">
+                        <div class="uni-scroll-view">
+                            <div class="uni-scroll-view" style="overflow: hidden;">
+                                <div class="uni-scroll-view-content">
+                                <hr>
+                                    {{#=loan_view}}
+                                    {{#=deltadays_arr}}
+                                    {{cnt = 0}}
+                                    {{for x in loan_view:}}
+                                    <!--LOAN ITEMS LOOPING DATA -->
+                                    <uni-view data-v-7408d10c="" data-v-b47c2ffe="" id="content-wrap">
+                                        <uni-view data-v-57cd5bd5="" data-v-7408d10c="" class="goods-card">
+                                            <!-- <img data-v-57cd5bd5="" src="{{=URL('static','heromining/hot.png')}}" class="hot"> -->
+                                                <!-- <uni-view data-v-57cd5bd5="" class="card">
+                                                    {{if int(x.lt_amountapprove) <= 1000:}}
+                                                        <img data-v-57cd5bd5="" src="{{=URL('static','heromining/5002.png')}}" class="img pjak">
+                                                    {{elif int(x.lt_amountapprove) < 2000:}}
+                                                    <img data-v-57cd5bd5="" src="{{=URL('static','heromining/10002.png')}}" class="img pjak">
+                                                    {{else:}}
+                                                    <img data-v-57cd5bd5="" src="{{=URL('static','heromining/20002.png')}}" class="img pjak">
+                                                    {{pass}}
+                                                </uni-view> -->
+                                            <!---->
+                                                <!-- <img  src="{{=URL('static','heromining/approve.png')}}"  class="discount approvejak" style="top:-10px;"> -->
+                                            <!---->
+                                            <!---->
+                                            <!---->
+                                            <!---->
+                                                <uni-view data-v-57cd5bd5="" class="flash-sale">
+                                                    <!---->
+                                                    <p data-v-57cd5bd5="">Days</p>
+                                                    <!---->
+                                                    <p data-v-57cd5bd5=""><span data-v-57cd5bd5="" class="num">{{=deltadays_arr[cnt].days}}</span><span
+                                                            data-v-57cd5bd5="">Days</span><span data-v-57cd5bd5="" class="num">{{=int(int(deltadays_arr[cnt].seconds)//3600)}}</span><span
+                                                            data-v-57cd5bd5="">:</span><span data-v-57cd5bd5="" class="num">{{=int((int(deltadays_arr[cnt].seconds)//60)%60)}}</span>
+                                                            <!-- <span data-v-57cd5bd5="">:</span><span data-v-57cd5bd5="" class="num">0</span> -->
+                                                        </p>
+                                                </uni-view>
+
+                                            <uni-view data-v-57cd5bd5="" class="desc" style="background: #fff;">
+                                                <h1 data-v-57cd5bd5="">{{=x.lt_borrower.bt_firstname}} {{=x.lt_borrower.bt_lastname}}</h1>
+                                                <p data-v-57cd5bd5="">Loan Amount：₱ {{=x.lt_amount}}</p> 
+                                                <p data-v-57cd5bd5="">Loan Ref#: {{=x.id}}</p> 
+                                                <p data-v-57cd5bd5="">Estimated Interest：₱ {{=x.lt_interestamount}}</p>
+                                                    <!---->
+                                                
+                                                <p data-v-57cd5bd5="">Co-maker: {{=x.lt_comker.first_name}} {{=x.lt_comker.last_name}}</p>
+                                                <p data-v-57cd5bd5="">Amount Release ：{{=x.lt_amountrelease}}</p>
+                                                <p data-v-57cd5bd5="">Loan Remarks : {{=x.lt_remarks}}
+                                                    <!---->
+                                                </p>
+                                                <p data-v-57cd5bd5="" style="color: rgb(231, 142, 0);">Loan Status :  {{=x.lt_status}}</p>
+                                                <!-- <p data-v-57cd5bd5="" style="color: rgb(231, 142, 0);">Date Release :  {{=x.lt_daterelease}}</p> -->
+                                                
+                                                <!---->
+                                                <!---->
+                                                <!-- <p data-v-57cd5bd5="" style="white-space: nowrap;">Settlement Currency: HMC<span data-v-57cd5bd5="">(1HMC=$5.56)</span></p> -->
+                                                <!---->
+                                                    <uni-view data-v-57cd5bd5="" class="purchase">
+                                                        <span data-v-57cd5bd5="" class="price">₱{{=x.lt_balance}}
+                                                        <!-- <s data-v-57cd5bd5=""style="margin-left: 10px; color: rgb(252, 84, 71);">₱{{=x.lt_amount}}</s> -->
+                                                        </span>
+                                                        <!---->
+                                                       
+                                                        {{if 'Admin' in ugroup:}}
+                                                            {{if str(x.lt_status)=='INPROCESS':}}
+                                                                <a href="{{=URL('apploan','appproveloan',vars=dict(l_id=x.id))}}" class=" btn jakvbut"  >
+                                                                        APPROVE
+                                                                </a>
+                                                            {{elif str(x.lt_status)=='APPROVED':}}
+                                                                <a href="{{=URL('apploan','releaseloan',vars=dict(l_id=x.id))}}" class=" btn jakvbutrel"  >
+                                                                    RELEASE
+                                                                </a>
+                                                            
+                                                            {{elif str(x.lt_status)=='RELEASE' or str(x.lt_status)=='SUCCEEDED':}}
+                                                                <a href="{{=URL('apploan','loanpayment',vars=dict(l_id=x.id))}}" class=" btn jakvbutpay"  >
+                                                                    PAY
+                                                                </a>
+                                                            {{pass}}
+                                                        {{pass}}
+                                                              
+                                                        <!-- </uni-button> -->
+                                                    </uni-view>
+                                                <!---->
+                                            </uni-view>
+                                        </uni-view>
+                                    </uni-view>
+                                    <hr>
+                                    {{cnt+=1}}
+                                    {{pass}}
+                                </div>
+                            </div>
+                        </div>
+
+                        </uni-scroll-view>
+                
+                      </uni-swiper-item>
+                    </div>
+                  </div>
+                </div>
+              </uni-swiper>
+            </uni-view>
+    </uni-page-body>
+  </uni-page-wrapper>
+
+

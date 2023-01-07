@@ -1,0 +1,183 @@
+timestamp: 2022-11-22T09:43:35.861852
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "first_name" CHAR(128),
+    "last_name" CHAR(128),
+    "email" CHAR(512),
+    "password" CHAR(512),
+    "registration_key" CHAR(512),
+    "reset_password_key" CHAR(512),
+    "registration_id" CHAR(512)
+);
+success!
+timestamp: 2022-11-22T09:43:35.906087
+CREATE TABLE "auth_group"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "role" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2022-11-22T09:43:35.932460
+CREATE TABLE "auth_membership"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2022-11-22T09:43:35.960193
+CREATE TABLE "auth_permission"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
+    "name" CHAR(512),
+    "table_name" CHAR(512),
+    "record_id" INTEGER
+);
+success!
+timestamp: 2022-11-22T09:43:35.993023
+CREATE TABLE "auth_event"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "time_stamp" TIMESTAMP,
+    "client_ip" CHAR(512),
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "origin" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2022-11-22T09:43:36.023669
+CREATE TABLE "auth_cas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "created_on" TIMESTAMP,
+    "service" CHAR(512),
+    "ticket" CHAR(512),
+    "renew" CHAR(1)
+);
+success!
+timestamp: 2022-11-22T13:22:24.005311
+ALTER TABLE "auth_user" ADD "username" CHAR(128);
+success!
+timestamp: 2022-11-22T15:08:24.750147
+ALTER TABLE "auth_user" ADD "auth_gcashno" CHAR(512) NOT NULL UNIQUE;
+timestamp: 2022-11-22T15:08:48.066717
+ALTER TABLE "auth_user" ADD "auth_gcashno" CHAR(512) NOT NULL;
+timestamp: 2022-11-22T15:09:07.911776
+ALTER TABLE "auth_user" ADD "auth_gcashno" CHAR(512);
+timestamp: 2022-11-22T15:09:07.933236
+ALTER TABLE "auth_user" ADD "auth_gcashname" CHAR(512);
+timestamp: 2022-11-22T15:09:07.950769
+ALTER TABLE "auth_user" ADD "auth_usercontact" CHAR(512);
+success!
+timestamp: 2022-11-25T09:46:58.414171
+CREATE TABLE "CapAdd_Table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "ca_user" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "ca_amount" DOUBLE NOT NULL,
+    "ca_datetime" CHAR(512) NOT NULL DEFAULT '2022-11-25 09:46:58.399864'
+);
+success!
+timestamp: 2022-11-25T09:46:58.450478
+CREATE TABLE "CapSub_Table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "cs_user" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "cs_amount" DOUBLE NOT NULL,
+    "cs_reaseon" CHAR(512),
+    "cs_datetime" CHAR(512) NOT NULL DEFAULT '2022-11-25 09:46:58.399864'
+);
+success!
+timestamp: 2022-11-25T09:46:58.474725
+CREATE TABLE "MonthTotal_Table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "mt_amount" DOUBLE NOT NULL,
+    "mt_datetime" CHAR(512) NOT NULL DEFAULT '2022-11-25 09:46:58.399864'
+);
+success!
+timestamp: 2022-11-28T11:09:13.701953
+CREATE TABLE "Borrowers_table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "bt_firstname" CHAR(512) NOT NULL,
+    "bt_lastname" CHAR(512) NOT NULL,
+    "bt_contact" CHAR(512),
+    "bt_creditstatus" CHAR(512),
+    "bt_creditscore" DOUBLE,
+    "bt_remarks" CHAR(512)
+);
+success!
+timestamp: 2022-11-28T11:09:13.728906
+CREATE TABLE "Term_table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "tt_term" INTEGER NOT NULL
+);
+success!
+timestamp: 2022-11-28T11:09:13.750803
+CREATE TABLE "Interest_table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "it_interest" DOUBLE NOT NULL
+);
+success!
+timestamp: 2022-11-28T14:27:27.135556
+CREATE TABLE "Loan_table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "lt_amount" DOUBLE NOT NULL DEFAULT 2000.0,
+    "lt_borrower" INTEGER REFERENCES "Borrowers_table" ("id") ON DELETE CASCADE  ,
+    "lt_reason" CHAR(512),
+    "lt_comker" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "lt_amountapprove" DOUBLE NOT NULL DEFAULT 2000.0,
+    "lt_interest" INTEGER REFERENCES "Interest_table" ("id") ON DELETE CASCADE  ,
+    "lt_interestamount" DOUBLE NOT NULL,
+    "lt_term" INTEGER REFERENCES "Term_table" ("id") ON DELETE CASCADE  ,
+    "lt_balance" DOUBLE NOT NULL,
+    "lt_approveby" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "lt_dateapproved" CHAR(512) NOT NULL DEFAULT '2022-11-28 14:27:27.109185',
+    "lt_gcashreference" CHAR(512),
+    "lt_daterelease" CHAR(512) NOT NULL DEFAULT '2022-11-28 14:27:27.109185',
+    "lt_releaseby" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "lt_processingfee" CHAR(512),
+    "lt_remarks" CHAR(512),
+    "lt_status" CHAR(512),
+    "lt_additioninfo" CHAR(512)
+);
+success!
+timestamp: 2022-11-28T14:37:11.027266
+CREATE TABLE "LoanPay_Table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "lp_loan" INTEGER REFERENCES "Loan_table" ("id") ON DELETE CASCADE  ,
+    "lp_amount" DOUBLE,
+    "lp_datepaid" CHAR(512) NOT NULL DEFAULT '2022-11-28 14:37:10.997674'
+);
+success!
+timestamp: 2022-12-02T12:46:41.468782
+ALTER TABLE "Borrowers_table" ADD "bt_addedby" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ;
+success!
+timestamp: 2022-12-27T14:43:23.067935
+ALTER TABLE "LoanPay_Table" ADD "lp_processby" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ;
+success!
+timestamp: 2022-12-28T10:59:13.235416
+ALTER TABLE "Loan_table" ADD "lt_amountrelease" DOUBLE NOT NULL DEFAULT 0.0;
+success!
+timestamp: 2022-12-28T11:08:47.769644
+ALTER TABLE "LoanPay_Table" ADD "lp_gcashreference" CHAR(512);
+success!
+timestamp: 2022-12-28T12:45:28.638615
+ALTER TABLE "CapSub_Table" ADD "cs_refloan" INTEGER REFERENCES "Loan_table" ("id") ON DELETE CASCADE  ;
+success!
+timestamp: 2022-12-31T07:55:22.376906
+CREATE TABLE "LoanComm_Table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "lc_loan" INTEGER REFERENCES "Loan_table" ("id") ON DELETE CASCADE  ,
+    "lc_amount" DOUBLE,
+    "lc_datepaid" CHAR(512) NOT NULL DEFAULT '2022-12-31 07:55:22.358370',
+    "lc_user" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "lc_percentage" DOUBLE,
+    "lc_processby" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2022-12-31T09:24:27.693765
+ALTER TABLE "LoanComm_Table" ADD "lc_comtype" CHAR(512);
+success!
+timestamp: 2022-12-31T09:56:13.646757
+CREATE TABLE "Notice_Table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "nt_title" CHAR(512),
+    "nt_message" CHAR(512)
+);
+success!

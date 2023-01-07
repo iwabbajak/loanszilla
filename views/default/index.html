@@ -1,0 +1,98 @@
+{{extend 'layout.html'}}
+
+{{#block header}}
+
+<link rel="stylesheet" href="{{=URL('static','css/hmc_my.css')}}"/>
+
+<link rel="shortcut icon" href="{{=URL('static','images/lz_logo.ico')}}" type="image/x-icon">
+<link rel="apple-touch-icon" href="{{=URL('static','images/lz_logo.png')}}">
+  <uni-page data-page="pages/index/my">
+    
+    <!---->
+    <!---->
+    <uni-page-wrapper>
+      <uni-page-body>
+        <uni-view data-v-eb3fb7a8="">
+          <h1 data-v-eb3fb7a8="">Personal Center</h1>
+          <uni-view data-v-eb3fb7a8="" class="top">
+            <uni-view data-v-eb3fb7a8="" class="basic">
+              <uni-view data-v-eb3fb7a8="" class="basic-info"><img data-v-eb3fb7a8=""
+                src="{{=URL('static','images/apploanzila.png')}}" >
+               
+                <uni-view data-v-eb3fb7a8="" class="info-list">
+                  <p data-v-eb3fb7a8="">{{=auth.user.first_name}} {{=auth.user.last_name}}</p>
+                  <p data-v-eb3fb7a8="">Email: {{=auth.user.email}}
+                    <!---->
+                  </p>
+                  <p data-v-eb3fb7a8="">Mobile Phone: {{=auth.user.auth_usercontact}}</p>
+                </uni-view>
+              </uni-view>
+            </uni-view>
+
+
+            <!-- <uni-view data-v-eb3fb7a8="" class="my-card" style="background-color: #4179f8!important">
+              <uni-view data-v-eb3fb7a8="" class="card-content">
+                <uni-view data-v-eb3fb7a8="" class="total-assets">
+                  <uni-view data-v-eb3fb7a8=""><img data-v-eb3fb7a8="" src="{{=URL('static','heromining/left-point-1.png')}}"><span
+                      data-v-eb3fb7a8="" class="tip">Capital Assets(₱)</sp n><img data-v-eb3fb7a8=""
+                      src="{{=URL('static','heromining/right-point-1.png')}}" ></uni-view>
+                  <p data-v-eb3fb7a8="">{{=total_capital}}</p>
+                </uni-view>
+                <p data-v-eb3fb7a8=""
+                  style="color: rgb(255, 255, 255); text-align: center; opacity: 0.8; margin-top: 5px;">Your funds are
+                  under protection</p>
+                <uni-view data-v-eb3fb7a8="" class="invest-info">
+                  <uni-view data-v-eb3fb7a8="">
+                    <p data-v-eb3fb7a8="">Running balance(₱)</p>
+                    <p data-v-eb3fb7a8="">{{=total_capital + total_comm + other_comm}}</p>
+                  </uni-view>
+                  <uni-view data-v-eb3fb7a8="">
+                    <p data-v-eb3fb7a8="">Loan Commission(₱)</p>
+                    <p data-v-eb3fb7a8="">{{=total_comm}}</p>
+                  </uni-view>
+                  <uni-view data-v-eb3fb7a8="">
+                    <p data-v-eb3fb7a8="">Other Commision(₱)</p>
+                    <p data-v-eb3fb7a8="">{{=other_comm}}</p>
+                  </uni-view>
+                </uni-view>
+              
+              </uni-view>
+            </uni-view>
+          </uni-view> -->
+          
+          <uni-view data-v-eb3fb7a8="" class="settings">
+            <uni-view data-v-eb3fb7a8="" class="fun-list">
+              <uni-view data-v-eb3fb7a8="">
+                <uni-view data-v-eb3fb7a8="">Personal Profile</uni-view>
+                <a href="{{=URL('default','user/profile')}}" style="color: inherit;text-decoration: none; ">
+                  <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+              </uni-view>
+            
+              <uni-view data-v-eb3fb7a8="">
+                <uni-view data-v-eb3fb7a8="">Change Passwrod</uni-view>
+                <a href="{{=URL('default','user/change_password')}}" style="color: inherit;text-decoration: none; ">
+                  <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+              </uni-view>
+            
+            </uni-view>
+
+
+
+
+
+
+
+
+            <a href="{{=URL('default','user/logout')}}" style="color: inherit;text-decoration: none;">
+            <uni-button data-v-eb3fb7a8="" class="hero-button" type="primary" style="width: 280px;">Logout
+           
+            </uni-button>
+          </a>
+          </uni-view>
+        </uni-view>
+      </uni-page-body>
+    </uni-page-wrapper>
+  </uni-page>
+  
+
+

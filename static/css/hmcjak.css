@@ -1,0 +1,135 @@
+.bg[data-v-f294a038] {
+    width: 100%;
+    z-index: -1
+  }
+
+  .hero-content[data-v-f294a038] {
+    padding-bottom: 0;
+    -webkit-transform: translateY(-175px);
+    transform: translateY(-175px)
+  }
+
+  .sel-country[data-v-f294a038] {
+    border-right: 2px solid #f1f1f1;
+    padding-right: 15px
+  }
+
+  .country-picker[data-v-f294a038] {
+    color: #4179f8;
+    padding-left: 15px;
+    position: relative
+  }
+
+  .region[data-v-f294a038] {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px
+  }
+
+  .card h1[data-v-f294a038] {
+    font-size: 24px;
+    color: #3c457a;
+    margin-bottom: 30px
+  }
+
+  .card[data-v-f294a038] {
+    padding: 30px 20px 25px;
+    text-align: center
+  }
+
+  .card p[data-v-f294a038] {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 7px 10px;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: left;
+    font-size: 14px
+  }
+
+  .card p>img[data-v-f294a038] {
+    height: 25px;
+    margin-right: 25px;
+    margin-top: 10px
+  }
+
+  .card p>uni-input[data-v-f294a038] {
+    height: 40px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    flex-grow: 1;
+    color: #3c457a
+  }
+
+  .country[data-v-f294a038] {
+    color: #3c457a;
+    display: flex !important;
+    align-items: baseline !important
+  }
+
+  .country-picker[data-v-f294a038]::after {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 7px;
+    right: -20px;
+    content: "";
+    border-width: 7px;
+    border-style: solid;
+    border-color: #9593a4 transparent transparent transparent;
+    padding: 0
+  }
+
+  .fun[data-v-f294a038] {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #4179f8
+  }
+
+  .fun>a[data-v-f294a038] {
+    text-decoration: none;
+    color: #4179f8
+  }
+
+  .lan-setting[data-v-f294a038] {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    color: $title-main-color;
+    font-size: 20px;
+    color: #fff
+  }
+
+  .wjakbutton[type=submit] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    width: 100%;
+    border-radius: 22px;
+    background: #4179f8;
+    height: 45px;
+    padding: 0 40px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    box-shadow: 0px 1px 8px 0px rgba(41, 89, 198, .47);
+    padding: 0;
+    border: none;
+   
+}
+
+.wjakbutton:active[type=submit] {
+    color: hsla(0, 0%, 100%, .6);
+    background-color: #0062cc;
+    -webkit-transform: scale(.98);
+    transform: scale(.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, .24)
+}

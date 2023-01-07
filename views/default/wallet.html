@@ -1,0 +1,217 @@
+{{extend 'layout.html'}}
+
+{{#block header}}
+
+<link rel="stylesheet" href="{{=URL('static','css/hmc_my.css')}}"/>
+
+<link rel="shortcut icon" href="{{=URL('static','images/lz_logo.ico')}}" type="image/x-icon">
+<link rel="apple-touch-icon" href="{{=URL('static','images/lz_logo.png')}}">
+  <uni-page data-page="pages/index/my">
+    
+    <!---->
+    <!---->
+    <uni-page-wrapper>
+      <uni-page-body>
+        <uni-view data-v-eb3fb7a8="">
+          <h1 data-v-eb3fb7a8="">My Wallet</h1>
+         
+
+
+            <uni-view data-v-eb3fb7a8="" class="my-card" style="background-color: #d62d20!important">
+              <uni-view data-v-eb3fb7a8="" class="card-content">
+                <uni-view data-v-eb3fb7a8="" class="total-assets">
+                  <uni-view data-v-eb3fb7a8=""><img data-v-eb3fb7a8="" src="{{=URL('static','heromining/left-point-1.png')}}"><span
+                      data-v-eb3fb7a8="" class="tip">Total Assets(₱)</sp n><img data-v-eb3fb7a8=""
+                      src="{{=URL('static','heromining/right-point-1.png')}}" ></uni-view>
+                  <p data-v-eb3fb7a8="">{{=total_capital + total_comm + other_comm}}</p>
+                </uni-view>
+                <p data-v-eb3fb7a8=""
+                  style="color: rgb(255, 255, 255); text-align: center; opacity: 0.8; margin-top: 5px;">Your funds are
+                  under protection</p>
+                <uni-view data-v-eb3fb7a8="" class="invest-info">
+                  <uni-view data-v-eb3fb7a8="">
+                    <p data-v-eb3fb7a8="">Capital Assets(₱)</p>
+                    <p data-v-eb3fb7a8="">{{=total_capital}}</p>
+                  </uni-view>
+                  <uni-view data-v-eb3fb7a8="">
+                    <p data-v-eb3fb7a8="">Loan Commission(₱)</p>
+                    <p data-v-eb3fb7a8="">{{=total_comm}}</p>
+                  </uni-view>
+                  <uni-view data-v-eb3fb7a8="">
+                    <p data-v-eb3fb7a8="">Other Commision(₱)</p>
+                    <p data-v-eb3fb7a8="">{{=other_comm}}</p>
+                  </uni-view>
+                </uni-view>
+              
+              </uni-view>
+            </uni-view>
+          </uni-view>
+
+
+          <!-- LATEST LOAN REPORTS -->
+          <uni-view data-v-ae30d5d0="" class="card chart">
+            <uni-view data-v-ae30d5d0="" class="cahrt-title">
+              <span data-v-ae30d5d0="" class="active" style="width: 200px;!important">Capital Investment</span>
+            </uni-view>
+
+            <uni-view data-v-146b5f3c="" data-v-ae30d5d0="" class="uni-table-scroll border-none" id="table"
+              style="width: 100%; margin-top: 10px; margin-bottom: 200px;">
+              <table data-v-146b5f3c="" border="0" cellpadding="0" cellspacing="0" class="uni-table" style="min-width: 35px;"
+                width="100%">
+                <tr data-v-32fc5c16="" data-v-ae30d5d0="" class="uni-table-tr">
+                  <!---->
+                  <th data-v-148eb588="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-th" data-v-32fc5c16=""
+                    style="width: 5px; text-align: left;">
+                    <uni-view data-v-148eb588="" class="uni-table-th-row">
+                      <uni-view data-v-148eb588="" class="uni-table-th-content" style="justify-content: flex-start;">Ref#
+                        <!---->
+                      </uni-view>
+                      <!---->
+                    </uni-view>
+                  </th>
+                  <th data-v-148eb588="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-th" data-v-32fc5c16="" style="width: 10px; text-align: left;">
+                    <uni-view data-v-148eb588="" class="uni-table-th-row">
+                      <uni-view data-v-148eb588="" class="uni-table-th-content" style="justify-content: flex-start;">Investor
+                      </uni-view>
+                    </uni-view>
+                  </th>
+
+                  <th data-v-148eb588="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-th" data-v-32fc5c16=""
+                    style="width: 10px; text-align: left;">
+                    <uni-view data-v-148eb588="" class="uni-table-th-row">
+                      <uni-view data-v-148eb588="" class="uni-table-th-content" style="justify-content: flex-start;text-align: center;">
+                        Amount
+                      </uni-view>
+                    </uni-view>
+                  </th>
+
+                  <th data-v-148eb588="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-th" data-v-32fc5c16=""
+                    style="width: 10px; text-align: left;">
+                    <uni-view data-v-148eb588="" class="uni-table-th-row">
+                      <uni-view data-v-148eb588="" class="uni-table-th-content" style="justify-content: flex-start;text-align: right;">
+                        Datetime
+                      </uni-view>
+                    </uni-view>
+                  </th>
+                
+                </tr>
+                {{for x in capital_view:}}
+                <tr data-v-32fc5c16="" data-v-ae30d5d0="" class="uni-table-tr">
+                  <td data-v-ba60828c="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-td" data-v-32fc5c16=""style="text-align: left;">
+                    {{=x.id}}
+                  </td>
+                  <td data-v-ba60828c="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-td" data-v-32fc5c16="" style="text-align: left; display: flex; align-items: center;">
+                    <!-- <img data-v-ae30d5d0="" data-v-ba60828c="" src="{{=URL('static','heromining/btc.png')}}" style="width: 30px; margin-right: 5px;"> -->
+                    <span data-v-ae30d5d0="" data-v-ba60828c="">
+                    {{=x.ca_user.first_name}} {{=x.ca_user.last_name}}
+                    </span>
+                  </td>
+                  <td data-v-ba60828c="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-td" data-v-32fc5c16=""style="text-align: center;">
+                    ₱ {{=x.ca_amount}}
+                  </td>
+                  <td data-v-ba60828c="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-td" data-v-32fc5c16=""style="text-align: right;">
+                    {{=x.ca_datetime}}
+                  </td>
+                  
+                </tr>
+                {{pass}}
+
+                </tr>
+              </table>
+            </uni-view>
+
+            </uni-view>
+
+            
+<!-- LATEST LOAN REPORTS -->
+<uni-view data-v-ae30d5d0="" class="card chart">
+    <uni-view data-v-ae30d5d0="" class="cahrt-title">
+      <span data-v-ae30d5d0="" class="active" style="width: 200px;background: #ffa700!important">Comission</span>
+    </uni-view>
+
+    <uni-view data-v-146b5f3c="" data-v-ae30d5d0="" class="uni-table-scroll border-none" id="table"
+      style="width: 100%; margin-top: 10px; margin-bottom: 200px;">
+      <table data-v-146b5f3c="" border="0" cellpadding="0" cellspacing="0" class="uni-table" style="min-width: 35px;" width="100%">
+        <tr data-v-32fc5c16="" data-v-ae30d5d0="" class="uni-table-tr">
+          <!---->
+          <th data-v-148eb588="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-th" data-v-32fc5c16=""
+            style="width: 5px; text-align: left;">
+            <uni-view data-v-148eb588="" class="uni-table-th-row">
+              <uni-view data-v-148eb588="" class="uni-table-th-content" style="justify-content: flex-start;">LID#
+                <!---->
+              </uni-view>
+              <!---->
+            </uni-view>
+          </th>
+          <th data-v-148eb588="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-th" data-v-32fc5c16=""
+            style="width: 10px; text-align: left;">
+            <uni-view data-v-148eb588="" class="uni-table-th-row">
+              <uni-view data-v-148eb588="" class="uni-table-th-content" style="justify-content: flex-start;">Borrower
+              </uni-view>
+            </uni-view>
+          </th>
+
+          <th data-v-148eb588="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-th" data-v-32fc5c16=""
+            style="width: 10px; text-align: left;">
+            <uni-view data-v-148eb588="" class="uni-table-th-row">
+              <uni-view data-v-148eb588="" class="uni-table-th-content" style="justify-content: flex-start;text-align: center;">
+               Amount
+              </uni-view>
+            </uni-view>
+          </th>
+
+          <th data-v-148eb588="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-th" data-v-32fc5c16=""
+            style="width: 10px; text-align: right;">
+            <uni-view data-v-148eb588="" class="uni-table-th-row">
+              <uni-view data-v-148eb588="" class="uni-table-th-content" style="justify-content: flex-start;text-align: right;">
+                Type
+              </uni-view>
+            </uni-view>
+          </th>
+        
+        </tr>
+        {{for x in comm_view:}}
+        <tr data-v-32fc5c16="" data-v-ae30d5d0="" class="uni-table-tr">
+          <td data-v-ba60828c="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-td" data-v-32fc5c16=""style="text-align: left;">
+            LID-{{=x.lc_loan}}
+          </td>
+          <td data-v-ba60828c="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-td" data-v-32fc5c16="" style="text-align: left; display: flex; align-items: center;">
+            <!-- <img data-v-ae30d5d0="" data-v-ba60828c="" src="{{=URL('static','heromining/btc.png')}}" style="width: 30px; margin-right: 5px;"> -->
+            <span data-v-ae30d5d0="" data-v-ba60828c="">
+            {{=x.lc_loan.lt_borrower.bt_firstname}} {{=x.lc_loan.lt_borrower.bt_lastname}}
+            </span>
+          </td>
+          <td data-v-ba60828c="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-td" data-v-32fc5c16=""style="text-align: center;">
+              ₱ {{=x.lc_amount}}
+            </td>
+
+          <td data-v-ba60828c="" data-v-ae30d5d0="" rowspan="1" colspan="1" class="uni-table-td" data-v-32fc5c16=""style="text-align: right;">
+            {{=x.lc_comtype}}
+          </td>
+          
+        </tr>
+        {{pass}}
+
+        </tr>
+  
+      </table>
+    </uni-view>
+
+
+
+  </uni-view>
+
+
+
+
+
+
+
+
+        </uni-view>
+      </uni-page-body>
+    </uni-page-wrapper>
+  </uni-page>
+  
+
+

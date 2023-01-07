@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://app.heromining.com/pages/login/login -->
+<html lang="en"
+  style="--status-bar-height:0px; --top-window-height:0px; --window-left:0px; --window-right:0px; --window-margin:0px; --window-top:calc(var(--top-window-height) + 0px); --window-bottom:0px;">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>LoansZilla</title>
+  <script>var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
+    document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />')</script>
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="{{=URL('static','heromining/hmc1.css')}}"/>
+  <link rel="stylesheet" href="{{=URL('static','heromining/hmcstyle.css')}}"/>
+  <link rel="stylesheet" href="{{=URL('static','css/hmcjak.css')}}"/>
+
+  <link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap4.css')}}"/>
+  <link rel="stylesheet" href="{{=URL('static','css/bootstrap.min.css')}}"/>
+  <link rel="stylesheet" href="{{=URL('static','css/hmc_with.css')}}"/>
+  <link rel="stylesheet" href="{{=URL('static','heromining/index.b0707a6a.css')}}"/>
+
+  <link rel="shortcut icon" href="{{=URL('static','images/lz_logo.ico')}}" type="image/x-icon">
+  <link rel="apple-touch-icon" href="{{=URL('static','images/lz_logo.png')}}">
+
+<style>
+  .back-title[data-v-dffecdd8] {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background: #fff;
+    color: #4179f8;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 100;
+}
+.back-title>a[data-v-dffecdd8] {
+    position: absolute;
+    left: 20px;
+    top:16px;
+    width: 10px;
+    height: 10px;
+    align-items: center;
+}
+.h1jak{
+    color: #4179f8;
+    font-size: 24px;
+    font-weight: bolder;
+}
+</style>
+</head>
+
+<body class="uni-body pages-login-login"><noscript><strong>Please enable JavaScript to continue.</strong></noscript>
+  <uni-app class="uni-app--maxwidth">
+    <uni-page data-page="pages/login/login">
+      <!---->
+      <!---->
+      <uni-page-wrapper>
+        <uni-page-body>
+          {{if request.args(0)== 'login':}}
+                <uni-view data-v-f294a038=""><img data-v-f294a038="" src="{{=URL('static','heromining/bg2.png')}}" class="bg">
+                </uni-view>
+                <uni-view data-v-f294a038="" class="hero-content">
+                  {{=form.custom.begin}}
+                  <uni-view data-v-f294a038="" class="card">
+                    <h1 class="h1jak">LoansZilla</h1>
+                    <p data-v-f294a038=""><img data-v-f294a038="" src="{{=URL('static','heromining/me_cur.png')}}">
+                      <input class="uni-input-input" id="auth_user_username" name="username" type="text" value="" placeholder="Please enter your username">
+                    </p>
+                    <p data-v-f294a038=""><img data-v-f294a038="" src="{{=URL('static','heromining/lock.png')}}">
+                      <input class="uni-input-input" id="auth_user_password" name="password" type="password" value="" placeholder="Please enter your password"><span
+                        class="help-block">
+                    </p>
+                    <!-- <input class="btn btn-outline-light btn-lg px-5" type="submit" > -->
+                    <input class="wjakbutton hero-button" type="submit" value="Log In">
+                   
+                  </uni-view>
+                  {{=form.custom.end}}
+                  <uni-view data-v-f294a038="" class="fun">
+                   By: iWabbaJak
+                    <!-- <a data-v-f294a038="" href="{{=URL('user/register')}}">Sign Up</a> -->
+                    <!-- <a data-v-f294a038="" href="https://play.google.com/store/apps/details?id=com.geni.mnibw.xlheromin">Download App</a> -->
+                  </uni-view>
+                </uni-view>
+                </uni-view>
+          {{elif  request.args(0)== 'profile':}}
+          <uni-view data-v-253ef2cc="">
+           
+            <uni-view data-v-dffecdd8="" data-v-253ef2cc="" class="back-title">
+              <a data-v-dffecdd8="" href="{{=URL('default','index')}}">
+                  <img data-v-dffecdd8="" src="{{=URL('static','heromining/ljoin.png')}}" style="height: 12px;justify-content: left!important;">
+              </a>
+           
+             Personal Profile
+  
+            </uni-view>
+            
+          
+            <uni-view data-v-253ef2cc="" id="list" class="card">
+              <uni-view data-v-253ef2cc="">
+                {{=form}}
+              </uni-view>
+          
+            </uni-view>
+            <uni-view data-v-0af76499="" data-v-253ef2cc="" class="uni-load-more">
+              <!---->
+          
+            </uni-view>
+          </uni-view>
+         
+        
+          {{elif  request.args(0)== 'change_password':}}
+          <uni-view data-v-253ef2cc="">
+            <uni-view data-v-dffecdd8="" data-v-253ef2cc="" class="back-title">
+              <a data-v-dffecdd8="" href="{{=URL('default','index')}}">
+                  <img data-v-dffecdd8="" src="{{=URL('static','heromining/ljoin.png')}}" style="height: 12px;justify-content: left!important;">
+              </a>
+           
+           Change Password
+  
+            </uni-view>
+            
+              <uni-view data-v-253ef2cc="" id="list" class="card">
+                <uni-view data-v-253ef2cc="">
+                  {{=form}}
+                </uni-view>
+              </uni-view>
+              <uni-view data-v-0af76499="" data-v-253ef2cc="" class="uni-load-more">
+                <!---->
+                
+              </uni-view>
+          </uni-view>
+        
+          
+          {{else:}}
+          <uni-view data-v-f294a038=""><img data-v-f294a038="" src="{{=URL('static','heromining/bg2.png')}}" class="bg">
+          </uni-view>
+          <uni-view data-v-f294a038="" class="hero-content">
+            <uni-view data-v-f294a038="" class="card">
+              <h1 class="h1jak">Sign Up</h1>
+              <p data-v-f294a038="">
+              {{=form}}
+              </p>
+            </uni-view>
+            <uni-view data-v-f294a038="" class="fun"><a data-v-f294a038="" href="{{=URL('user/login')}}">Log In</a></uni-view>
+          </uni-view>
+          {{pass}}
+        </uni-page-body>
+      </uni-page-wrapper>
+
+
+    </uni-page>
+    
+</body>
+
+</html>

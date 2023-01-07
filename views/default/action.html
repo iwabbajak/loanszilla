@@ -1,0 +1,140 @@
+{{extend 'layout.html'}}
+
+{{#block header}}
+<style>
+  .h1jak{
+    color: #4179f8;
+    font-size: 24px;
+    font-weight: bolder;
+}
+</style>
+<link rel="stylesheet" href="{{=URL('static','css/hmc_my.css')}}"/>
+
+<link rel="shortcut icon" href="{{=URL('static','images/lz_logo.ico')}}" type="image/x-icon">
+<link rel="apple-touch-icon" href="{{=URL('static','images/lz_logo.png')}}">
+  <uni-page data-page="pages/index/my">
+    <!---->
+    <!---->
+    <uni-page-wrapper>
+      <uni-page-body>
+        <uni-view data-v-eb3fb7a8="">
+          <h1 data-v-eb3fb7a8="" class="h1jak"><img data-v-ae30d5d0="" mode="aspectFit" src="{{=URL('static','heromining/logo3.png')}}" style="height: 25px;">Action Center</h1>
+              <uni-view data-v-eb3fb7a8="" class="top">
+            </uni-view>
+          </uni-view>
+          <uni-view data-v-eb3fb7a8="" class="settings">
+            <uni-view data-v-eb3fb7a8="" class="fun-list">
+              <uni-view data-v-eb3fb7a8="">
+                <a href="{{=URL('apploan','applyloan')}}" style="color: inherit;text-decoration: none; ">
+                <uni-view data-v-eb3fb7a8="">Apply Loan</uni-view>
+              </a>
+                <a href="{{=URL('apploan','applyloan')}}" style="color: inherit;text-decoration: none; ">
+                  <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+              </uni-view>
+             
+            {{if 'Admin' in ugroup:}}
+            <!-- Borrowers Table -->
+            <uni-view data-v-eb3fb7a8="">
+              <a href="{{=URL('admin','crud_borrow')}}" style="color: inherit;text-decoration: none; ">
+                <uni-view data-v-eb3fb7a8=""><img data-v-eb3fb7a8="" src="{{=URL('static','images/admin_flag.png')}}"
+                    style="height: 10px;width: 30px;"> Borrower Table
+                </uni-view>
+              </a>
+              <a href="{{=URL('admin','crud_borrow')}}" style="color: inherit;text-decoration: none; ">
+                <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;">
+              </a>
+            </uni-view>
+            <!-- Add Capital -->
+            <uni-view data-v-eb3fb7a8="">
+              <a href="{{=URL('admin','addcapital')}}" style="color: inherit;text-decoration: none; ">
+              <uni-view data-v-eb3fb7a8="">
+                <img data-v-eb3fb7a8="" src="{{=URL('static','images/admin_flag.png')}}"
+                  style="height: 10px;width: 30px;"> Add Capital</uni-view>
+              </a>
+              <a href="{{=URL('admin','addcapital')}}" style="color: inherit;text-decoration: none; ">
+                <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;">
+              </a>
+            </uni-view>
+            <!-- Loan Approval -->
+            <!-- <uni-view data-v-eb3fb7a8="">
+              <a href="{{=URL('apploan','loanlist')}}" style="color: inherit;text-decoration: none; ">
+              <uni-view data-v-eb3fb7a8="">
+                <img data-v-eb3fb7a8="" src="{{=URL('static','images/admin_flag.png')}}" style="height: 10px;width: 30px;">
+                Loan Approval
+              </uni-view>
+              </a>
+              <a href="{{=URL('apploan','loanlist')}}" style="color: inherit;text-decoration: none; ">
+                <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+            </uni-view> -->
+            <!-- Loan Releasal -->
+            <!-- <uni-view data-v-eb3fb7a8="">
+              <uni-view data-v-eb3fb7a8=""><img data-v-eb3fb7a8="" src="{{=URL('static','images/admin_flag.png')}}"
+                  style="height: 10px;width: 30px;">
+                Loan Releasal</uni-view>
+              <a href="{{=URL('default','index')}}" style="color: inherit;text-decoration: none; ">
+                <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+            </uni-view> -->
+
+             <!-- Loan Payment -->
+             <!-- <uni-view data-v-eb3fb7a8="">
+              <uni-view data-v-eb3fb7a8=""><img data-v-eb3fb7a8="" src="{{=URL('static','images/admin_flag.png')}}"
+                  style="height: 10px;width: 30px;">
+                Loan Payment</uni-view>
+              <a href="{{=URL('apploan','loanlist')}}" style="color: inherit;text-decoration: none; ">
+                <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+            </uni-view> -->
+
+            {{pass}}
+           
+            {{if 'Dev' in ugroup:}}
+              <uni-view data-v-eb3fb7a8="">
+                <uni-view data-v-eb3fb7a8="">User Table</uni-view>
+                <a href="{{=URL('admin','crud_user')}}" style="color: inherit;text-decoration: none; ">
+                  <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+              </uni-view>
+
+              <uni-view data-v-eb3fb7a8="">
+                <uni-view data-v-eb3fb7a8="">Group Table</uni-view>
+                <a href="{{=URL('admin','crud_usergroup')}}" style="color: inherit;text-decoration: none; ">
+                  <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+              </uni-view>
+
+              <uni-view data-v-eb3fb7a8="">
+                <uni-view data-v-eb3fb7a8="">Group Membership Table</uni-view>
+                <a href="{{=URL('admin','crud_usergroupmember')}}" style="color: inherit;text-decoration: none; ">
+                  <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+              </uni-view>
+              <uni-view data-v-eb3fb7a8="">
+                <uni-view data-v-eb3fb7a8="">Capital Table</uni-view>
+                <a href="{{=URL('admin','crud_ca')}}" style="color: inherit;text-decoration: none; ">
+                  <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+              </uni-view>
+              <uni-view data-v-eb3fb7a8="">
+                <uni-view data-v-eb3fb7a8="">Term Table</uni-view>
+                <a href="{{=URL('admin','crud_term')}}" style="color: inherit;text-decoration: none; ">
+                  <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+              </uni-view>
+              <uni-view data-v-eb3fb7a8="">
+                <uni-view data-v-eb3fb7a8="">Interest Table</uni-view>
+                <a href="{{=URL('admin','crud_interest')}}" style="color: inherit;text-decoration: none; ">
+                  <img data-v-eb3fb7a8="" src="{{=URL('static','heromining/join.png')}}" style="height: 12px;"> </a>
+              </uni-view>
+            {{pass}}
+            </uni-view>
+
+
+
+
+
+
+
+
+           
+          </uni-view>
+        </uni-view>
+      </uni-page-body>
+    </uni-page-wrapper>
+  </uni-page>
+  
+
+

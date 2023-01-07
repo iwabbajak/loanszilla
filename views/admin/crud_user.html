@@ -1,0 +1,116 @@
+{{extend 'layout.html'}}
+
+{{#block header}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap4.css')}}"/>
+
+<style>
+    .back-title[data-v-dffecdd8] {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 100%;
+      background: #fff;
+      color: #4179f8;
+      font-size: 20px;
+      font-weight: 600;
+      z-index: 100;
+  }
+  .back-title>a[data-v-dffecdd8] {
+      position: absolute;
+      left: 20px;
+      top:16px;
+      width: 10px;
+      height: 10px;
+      align-items: center;
+  }
+  .h1jak{
+      color: #4179f8;
+      font-size: 24px;
+      font-weight: bolder;
+  }
+
+  .web2py_grid table {
+    width: 100%;
+    font-size: 8.5px;
+    line-height: 12px;
+    }
+    .web2py_grid thead th, .web2py_grid tfoot td {
+    background-color: #EAEAEA;
+    padding: 0px 0px;
+    }
+    .web2py_grid tbody td {
+    vertical-align: middle;
+    padding: 0px 0px;
+}
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+.web2py_console .form-control {
+    width: 20%;
+    display: inline;
+    height: 16px;
+}
+
+.web2py_console input, .web2py_console select, .web2py_console a {
+    margin: 0px;
+    padding: 0px 0px;
+}
+.web2py_search_actions a, .web2py_console input[type=submit], .web2py_console input[type=button], .web2py_console button {
+    padding: 0px 0px;
+}
+  </style>
+
+
+  <uni-page data-page="pages/index/my">
+    <!---->
+    <!---->
+    <uni-page-wrapper>
+      <uni-page-body>
+       
+        <uni-view data-v-253ef2cc="">
+           
+            <uni-view data-v-dffecdd8="" data-v-253ef2cc="" class="back-title">
+              <a data-v-dffecdd8="" href="{{=URL('default','action')}}">
+                  <img data-v-dffecdd8="" src="{{=URL('static','heromining/ljoin.png')}}" style="height: 12px;justify-content: left!important;">
+              </a>
+           
+             User Table
+  
+            </uni-view>
+            
+          
+            <uni-view data-v-253ef2cc="" id="list" class="card">
+              <uni-view>
+            
+                    {{=grid}}
+              </uni-view>
+          
+            </uni-view>
+            <uni-view data-v-0af76499="" data-v-253ef2cc="" class="uni-load-more">
+              <!---->
+          
+            </uni-view>
+          </uni-view>
+
+
+      </uni-page-body>
+    </uni-page-wrapper>
+  </uni-page>
+  
+
+
+<!-- The javascript =============================== -->
+<script src="{{=URL('static','js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{=URL('static','js/web2py-bootstrap4.js')}}"></script>
