@@ -41,7 +41,7 @@ def wallet():
     
     # Query Commision Money
     comm_qry =(db.LoanComm_Table.lc_user==auth.user.id)
-    comm_view = db(comm_qry).select(db.LoanComm_Table.ALL,orderby=db.LoanComm_Table.lc_datepaid)
+    comm_view = db(comm_qry).select(db.LoanComm_Table.ALL,orderby=db.LoanComm_Table.id)
     # Total Capital calculation
     total_comm = 0
     other_comm = 0

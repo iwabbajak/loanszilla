@@ -35,11 +35,11 @@
                   </uni-view>
                   <uni-view data-v-eb3fb7a8="">
                     <p data-v-eb3fb7a8="">Loan Commission(₱)</p>
-                    <p data-v-eb3fb7a8="">{{=total_comm}}</p>
+                    <p data-v-eb3fb7a8="">{{=round(total_comm,2)}}</p>
                   </uni-view>
                   <uni-view data-v-eb3fb7a8="">
                     <p data-v-eb3fb7a8="">Other Commission(₱)</p>
-                    <p data-v-eb3fb7a8="">{{=other_comm}}</p>
+                    <p data-v-eb3fb7a8="">{{=round(other_comm,2)}}</p>
                   </uni-view>
                 </uni-view>
               
@@ -124,7 +124,7 @@
 
             
 <!-- LATEST LOAN REPORTS -->
-<uni-view data-v-ae30d5d0="" class="card chart">
+<uni-view data-v-ae30d5d0="" class="card chart"  style="height: 100%;">
     <uni-view data-v-ae30d5d0="" class="cahrt-title">
       <span data-v-ae30d5d0="" class="active" style="width: 200px;background: #ffa700!important">Commission</span>
     </uni-view>
@@ -212,6 +212,3 @@
       </uni-page-body>
     </uni-page-wrapper>
   </uni-page>
-  
-
-
