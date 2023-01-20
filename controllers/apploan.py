@@ -335,22 +335,22 @@ def releaseconf():
                 )
             db.commit()
             # UPDATE COMAKER AND ADMIN FEES
-            # Get Comaker Percentage added to Comaker Commision [2%]
+            # Get Comaker Percentage added to Comaker Commision [20%]
             db.LoanComm_Table.insert(
                 lc_loan = loan_view.id,
-                lc_amount = loan_view.lt_amount * 0.02,
+                lc_amount = loan_view.lt_interestamount * 0.2,
                 lc_user = loan_view.lt_comker,
-                lc_percentage = 0.02,
+                lc_percentage = 0.2,
                 lc_processby = auth.user.id,
                 lc_comtype = 'CC',
                 )
             db.commit()
-             # Get Admin Percentage added to Admin Commision [2%] User always User id1 the Developer
+             # Get Admin Percentage added to Admin Commision [20%] User always User id1 the Developer
             db.LoanComm_Table.insert(
                 lc_loan = loan_view.id,
-                lc_amount = loan_view.lt_amount* 0.02,
+                lc_amount = loan_view.lt_interestamount * 0.2,
                 lc_user = 1,
-                lc_percentage = 0.02,
+                lc_percentage = 0.2,
                 lc_processby = auth.user.id,
                 lc_comtype = 'AC',
                 )
@@ -358,13 +358,13 @@ def releaseconf():
 
 
 
-            # UPDATE ALL USER [6%] SHARING
+            # UPDATE ALL USER [60%] SHARING
             for x in capital_view:
                 db.LoanComm_Table.insert(
                 lc_loan = loan_view.id,
-                lc_amount = round((loan_view.lt_amount * 0.06) * (x.ca_amount/total_capital),2),
+                lc_amount = round((loan_view.lt_interestamount * 0.6) * (x.ca_amount/total_capital),2),
                 lc_user = x.ca_user.id,
-                lc_percentage = 0.06,
+                lc_percentage = 0.6,
                 lc_processby = auth.user.id,
                 lc_comtype = 'LC',
                 )
@@ -373,7 +373,7 @@ def releaseconf():
             # INSERT NOTICE BOARD
             db.Notice_Table.insert(
                 nt_title = 'LOAN RELEASED',
-                nt_message = 'Release to'  + loan_view.lt_borrower.bt_firstname + " " +loan_view.lt_borrower.bt_lastname,
+                nt_message = 'Release to '  + loan_view.lt_borrower.bt_firstname + " " +loan_view.lt_borrower.bt_lastname,
             )
             db.commit()
 
