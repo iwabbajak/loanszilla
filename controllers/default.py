@@ -99,6 +99,18 @@ def home():
         tloanp += x.lp_amount
 
 
+    # Get admin fee dont show on app
+    # Query admin commission
+    lc_qry =(db.LoanComm_Table.lc_comtype=='AC')
+    lc_view = db(lc_qry).select(db.LoanComm_Table.ALL,orderby=db.LoanComm_Table.id)
+
+    tadcom=0
+    # Get total admin commission
+    for x in lc_view:
+        tadcom += x.lc_amount
+
+
+
 
     # Latest Loan Display
     latloan_qry =(db.Loan_table.id>=1)
@@ -107,7 +119,8 @@ def home():
     return dict(auth=auth,
     cf_view=cf_view,tfunds=tfunds,
     cs_view=cs_view,tsubs=tsubs,
-    latloan_view=latloan_view,tincom=tincom,tloanp=tloanp)
+    latloan_view=latloan_view,tincom=tincom,tloanp=tloanp,
+    tadcom=tadcom)
 
 
 
